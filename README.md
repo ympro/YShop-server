@@ -43,9 +43,12 @@ Do elegant things with normal code!
 * HBase
 * storm
 * Spark
+* netty
 ### Basic
+* jdk8
 * java Agent
 * Matrix
+* nio
 ### Other
 * Swagger
 * Mybatis generator
