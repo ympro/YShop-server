@@ -1,2 +1,3 @@
 rootProject.name = 'yshop-system'
+include 'yshop-system-proxy'
 
