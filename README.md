@@ -12,6 +12,8 @@ Do elegant things with normal code!
 * Merchants
 * After sales
 * Databoard Platform
+* Spider Platform
+* Test Platform
 ### basic
 * Extended-Plugin
 * Rule Engine
