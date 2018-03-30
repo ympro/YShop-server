@@ -13,20 +13,26 @@ Do elegant things with normal code!
 * After sales
 * Databoard Platform
 ### basic
-* Extended
+* Extended-Plugin
 * Rule Engine
 * SSO
 * Authority
 * Search Platform
 * Monitor
 * Message System
+* Service-governance Platform
 
 
 ## Point:
 ### Framework
 * spring boot
-* spring cloud
-* Mybatis
+* spring cloud 
+(to replaced by our own Service Framework based on Java Agent)
+* Mybatis, druid
+* Shiro 
+* Spring-statemachine
+* Thymleaf
+* Curator
 ### Store
 * Redis
 * MySql
@@ -40,3 +46,8 @@ Do elegant things with normal code!
 ### Basic
 * java Agent
 * Matrix
+### Other
+* Swagger
+* Mybatis generator
+* p3c
+* JUnitGenerator V2.0
