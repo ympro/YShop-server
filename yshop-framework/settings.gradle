@@ -1,0 +1,6 @@
+rootProject.name = 'yshop-framework'
+
+include 'yshop-framework-boot'
+include 'yshop-framework-mvc'
+include 'yshop-framework-orm'
+
