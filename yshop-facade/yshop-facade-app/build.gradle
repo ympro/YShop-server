@@ -1,10 +1,23 @@
 group 'com.yshop'
 version '1.0-SNAPSHOT'
 
+/**
+ * 设置默认 resources 为开发环境状态
+ * 这儿如果不设置的话，idea 编译时只会默认获取 resources 目录
+**/
+
 apply plugin: 'groovy'
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources', 'src/main/resources-dev']
+        }
+    }
+}
 
 repositories {
     mavenCentral()
