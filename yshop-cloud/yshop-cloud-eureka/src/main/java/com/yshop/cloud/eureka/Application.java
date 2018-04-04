@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
  * @date 2018/4/3
  */
 @EnableAutoConfiguration
+@EnableEurekaServer
 public class Application {
 
     public static void main(String[] args) throws Exception {
