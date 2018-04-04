@@ -10,3 +10,5 @@ include 'yshop-system-search'
 include 'yshop-system-spider'
 include 'yshop-system-stream'
 include 'yshop-system-test'
+include 'yshop-system-config'
+

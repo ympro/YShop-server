@@ -1,0 +1,6 @@
+rootProject.name = 'yshop-cloud'
+
+include 'yshop-cloud-eureka'
+include 'yshop-cloud-config'
+include 'yshop-cloud-center'
+
