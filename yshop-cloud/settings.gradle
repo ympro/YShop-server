@@ -1,6 +1,26 @@
-rootProject.name = 'yshop-cloud'
+// help manage project structure
 
-include 'yshop-cloud-eureka'
-include 'yshop-cloud-config'
-include 'yshop-cloud-center'
+def dir = new File(settingsDir.toString())
+def projects = new HashSet()
+def projectSymbol = File.separator + 'src'
 
+dir.eachDirRecurse { subDir ->
+    def subDirName = subDir.canonicalPath
+    def isSubProject = true
+
+    if (subDirName.endsWith(projectSymbol)) {
+        for (String projectDir in projects) {
+            if (subDirName.startsWith(projectDir)) {
+                isSubProject = false
+                break
+            }
+        }
+        if (isSubProject) {
+            projects << subDirName
+            def lastIndex = subDirName.lastIndexOf(projectSymbol)
+            def gradleModulePath = subDirName.substring(dir.canonicalPath.length(), lastIndex).replace(File.separator, ':')
+            println "include " + gradleModulePath
+            include gradleModulePath
+        }
+    }
+}

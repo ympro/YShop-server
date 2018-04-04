@@ -1,4 +1,4 @@
-package com.yshop.facade.app.api;
+package com.yshop.cloud.center.api;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
