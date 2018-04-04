@@ -1,4 +1,5 @@
 // help manage project structure
+// code from https://github.com/happyyangyuan/springcloud-quickstart
 
 def dir = new File(settingsDir.toString())
 def projects = new HashSet()
