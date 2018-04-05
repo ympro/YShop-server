@@ -1,0 +1,16 @@
+server:
+  port: 8893
+
+spring:
+  application:
+    name: yshop-cloud-config
+  profiles:
+    active: local
+  cloud:
+    config:
+      allow-override: true
+      label: master #Branch name for the repository.
+      server:
+        git:
+          uri:
+          basedir:    # in case of the default /tmp dir deletion.

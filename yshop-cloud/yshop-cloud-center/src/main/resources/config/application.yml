@@ -1,6 +1,6 @@
 # double space
 server:
-  port: 8888
+  port: 8890
 
 spring:
   profiles:

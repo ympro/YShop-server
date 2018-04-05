@@ -1,0 +1,14 @@
+server:
+  port: 8892
+
+spring:
+  application:
+    name: yshop-cloud-zuul
+  profiles:
+    active: local
+
+zuul:
+  routes:
+    api0:
+      path: /app/**
+      serviceId: yshop-facade-app

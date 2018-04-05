@@ -1,0 +1,8 @@
+server:
+  port: 8891
+
+spring:
+  application:
+    name: yshop-cloud-zipkin
+  profiles:
+    active: local

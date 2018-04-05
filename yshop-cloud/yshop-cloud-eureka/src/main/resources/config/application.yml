@@ -3,8 +3,10 @@ server:
   port: 8888
 
 spring:
+  application:
+    name: yshop-cloud-eureka
   profiles:
-    active: dev
+    active: local
 
 eureka:
   instance:

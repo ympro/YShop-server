@@ -1,4 +1,5 @@
 dependencies {
     compile "io.zipkin.java:zipkin-server"
     compile "io.zipkin.java:zipkin-autoconfigure-ui"
+    compile "org.springframework.cloud:spring-cloud-starter-eureka"
 }
