@@ -1,5 +1,0 @@
-rootProject.name = 'yshop-facade'
-
-include 'yshop-facade-admin'
-include 'yshop-facade-app'
-include 'yshop-facade-merchant'

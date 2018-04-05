@@ -1,4 +1,0 @@
-rootProject.name = 'yshop-common'
-
-include 'yshop-common-own'
-include 'yshop-common-third'
