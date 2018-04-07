@@ -46,21 +46,13 @@ public class ItemServiceImpl implements ItemService {
         criteria.andIdEqualTo(itemId);
         List<TbItem> list = itemMapper.selectByExample(example);
         if (list != null && list.size() > 0) {
-            TbItem item = list.get(0);
-            return item;
+            return list.get(0);
         }
         return null;
     }
 
     /**
      * 商品列表查询
-     * <p>Title: getItemList</p>
-     * <p>Description: </p>
-     *
-     * @param page
-     * @param rows
-     * @return
-     * @see com.yshop.service.product.service.ItemService#getItemList(long, long)
      */
     @Override
     public EUDataGridResult getItemList(int page, int rows) {
@@ -105,10 +97,6 @@ public class ItemServiceImpl implements ItemService {
 
     /**
      * 添加商品描述
-     * <p>Title: insertItemDesc</p>
-     * <p>Description: </p>
-     *
-     * @param desc
      */
     private TaotaoResult insertItemDesc(Long itemId, String desc) {
         TbItemDesc itemDesc = new TbItemDesc();
@@ -122,12 +110,6 @@ public class ItemServiceImpl implements ItemService {
 
     /**
      * 添加规格参数
-     * <p>Title: insertItemParamItem</p>
-     * <p>Description: </p>
-     *
-     * @param itemId
-     * @param itemParam
-     * @return
      */
     private TaotaoResult insertItemParamItem(Long itemId, String itemParam) {
         //创建一个pojo

@@ -24,7 +24,6 @@ public class ItemCatServiceImpl implements ItemCatService {
 
     @Override
     public List<EUTreeNode> getCatList(long parentId) {
-
         //创建查询条件
         TbItemCatExample example = new TbItemCatExample();
         Criteria criteria = example.createCriteria();
@@ -34,10 +33,7 @@ public class ItemCatServiceImpl implements ItemCatService {
         List<EUTreeNode> resultList = new ArrayList<>();
         //把列表转换成treeNodelist
         for (TbItemCat tbItemCat : list) {
-            EUTreeNode node = new EUTreeNode();
-            node.setId(tbItemCat.getId());
-            node.setText(tbItemCat.getName());
-            node.setState(tbItemCat.getIsParent() ? "closed" : "open");
+            EUTreeNode node = new EUTreeNode(tbItemCat.getId(), tbItemCat.getName(), tbItemCat.getIsParent() ? "closed" : "open");
             resultList.add(node);
         }
         //返回结果

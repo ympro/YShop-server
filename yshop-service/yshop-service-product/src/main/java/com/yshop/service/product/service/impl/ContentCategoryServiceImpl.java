@@ -35,11 +35,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
         List<EUTreeNode> resultList = new ArrayList<>();
         for (TbContentCategory tbContentCategory : list) {
             //创建一个节点
-            EUTreeNode node = new EUTreeNode();
-            node.setId(tbContentCategory.getId());
-            node.setText(tbContentCategory.getName());
-            node.setState(tbContentCategory.getIsParent() ? "closed" : "open");
-
+            EUTreeNode node = new EUTreeNode(tbContentCategory.getId(), tbContentCategory.getName(), tbContentCategory.getIsParent() ? "closed" : "open");
             resultList.add(node);
         }
         return resultList;
@@ -47,7 +43,6 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 
     @Override
     public TaotaoResult insertContentCategory(long parentId, String name) {
-
         //创建一个pojo
         TbContentCategory contentCategory = new TbContentCategory();
         contentCategory.setName(name);

@@ -9,6 +9,15 @@ public class EUTreeNode {
     private String text;
     private String state;
 
+    public EUTreeNode() {
+    }
+
+    public EUTreeNode(long id, String text, String state) {
+        this.id = id;
+        this.text = text;
+        this.state = state;
+    }
+
     public long getId() {
         return id;
     }
