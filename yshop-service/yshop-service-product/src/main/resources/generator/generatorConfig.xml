@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--<properties resource="mysql.properties"/>-->
+    <context id="mysqlTables" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/yshop?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root"
+                        password="root"/>
+
+        <!--指定生成的类型为java类型，避免数据库中number等类型字段 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--自动生成的实体的存放包路径 -->
+        <javaModelGenerator targetPackage="com.yshop.service.product.dao.model"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--自动生成的*Mapper.xml文件存放路径 -->
+        <sqlMapGenerator targetPackage="mappers"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!--自动生成的*Mapper.java存放路径 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.yshop.service.product.dao"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="content" domainObjectName="Content"/>
+        <table tableName="content_category" domainObjectName="ContentCategory"/>
+        <table tableName="product" domainObjectName="Product"/>
+        <table tableName="product_category" domainObjectName="ProductCategory"/>
+        <table tableName="product_desc" domainObjectName="ProductDesc"/>
+        <table tableName="product_param" domainObjectName="ProductParam"/>
+        <table tableName="product_param_mapping" domainObjectName="ProductParamMapping"/>
+        <table tableName="order" domainObjectName="Order"/>
+        <table tableName="order_item" domainObjectName="OrderItem"/>
+        <table tableName="order_shipping" domainObjectName="OrderShipping"/>
+        <table tableName="user" domainObjectName="User"/>
+    </context>
+
+</generatorConfiguration>
