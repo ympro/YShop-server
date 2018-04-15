@@ -1,4 +1,4 @@
-package com.yshop.service.product.config;
+package com.yshop.service.order.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -23,7 +23,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan("com.yshop.service.product")
+@MapperScan("com.yshop.service.order")
 public class MyBatisConfig {
 
     @Bean(destroyMethod = "close", initMethod = "init")

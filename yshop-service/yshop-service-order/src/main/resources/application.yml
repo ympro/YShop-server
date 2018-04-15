@@ -1,0 +1,22 @@
+server:
+  port: 8901
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    name: mydb
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://${db.host}:${db.port}/${db.name}?zeroDateTimeBehavior=convertToNull&useUnicode=yes&characterEncoding=UTF8
+    username: ${db.user}
+    password: ${db.pwd}
+    driver-class-name: com.mysql.jdbc.Driver
+    minIdle: 1
+    maxActive: 100
+    initialSize: 1
+    timeBetweenEvictionRunsMillis: 3000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'ZTM' FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false

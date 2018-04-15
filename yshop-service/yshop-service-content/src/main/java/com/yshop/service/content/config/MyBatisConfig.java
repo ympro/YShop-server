@@ -1,4 +1,4 @@
-package com.yshop.service.product.config;
+package com.yshop.service.content.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -23,7 +23,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan("com.yshop.service.product")
+@MapperScan("com.yshop.service.content")
 public class MyBatisConfig {
 
     @Bean(destroyMethod = "close", initMethod = "init")
@@ -33,7 +33,7 @@ public class MyBatisConfig {
         return new DruidDataSource();
     }
 
-    @Bean(name = "yshopProductManaver")
+    @Bean(name = "yshopContenttManaver")
     public PlatformTransactionManager txManager() {
         return new DataSourceTransactionManager(createDatasource());
     }

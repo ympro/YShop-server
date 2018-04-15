@@ -1,8 +1,6 @@
 group 'com.yshop'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
 buildscript { // 第三方插件
     repositories { // maven仓库地址
         maven {
@@ -14,6 +12,7 @@ buildscript { // 第三方插件
         mavenCentral()
     }
     dependencies { // 依赖项
+        // spring-boot plugin gradle 4.0+
         // classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE")
         classpath("gradle.plugin.com.arenagod.gradle:mybatis-generator-plugin:1.3")
     }
@@ -24,6 +23,8 @@ apply plugin: 'java'
 // apply plugin: 'org.springframework.boot'
 // 引入 mybatis-generator 插件
 apply plugin: "com.arenagod.gradle.MybatisGenerator"
+
+sourceCompatibility = 1.8
 
 repositories {
     maven {
