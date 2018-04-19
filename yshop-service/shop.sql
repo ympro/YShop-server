@@ -95,13 +95,14 @@ CREATE TABLE `product_desc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品描述表';
 
 -- ----------------------------
--- Table structure for product_param
+-- Table structure for product_param_template
 -- ----------------------------
-DROP TABLE IF EXISTS `product_param`;
-CREATE TABLE `product_param` (
+DROP TABLE IF EXISTS `product_param_template`;
+CREATE TABLE `product_param_template` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `product_category_id` bigint(20) DEFAULT NULL COMMENT '商品类目ID',
-  `param_data` text COMMENT '参数数据，格式为json格式',
+  `product_category_id` bigint(20) NOT NULL DEFAULT '' COMMENT '商品类目ID',
+  `param_template` varchar(100) NOT NULL DEFAULT '' COMMENT '参数模板,可以多行，格式为json格式 eg:{"paramKey":"clientId","paramName":"58客户ID"}',
+  `type` varchar(20) NOT NULL DEFAULT 'default' COMMENT '类型',
   `ctime` timestamp NOT NULL DEFAULT '1970-01-02 00:00:00' COMMENT '创建时间',
   `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   `is_delete` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT '是否删除',
@@ -110,10 +111,27 @@ CREATE TABLE `product_param` (
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='商品规则参数';
 
 -- ----------------------------
--- Table structure for product_param_mapping
+-- Table structure for product_params
 -- ----------------------------
-DROP TABLE IF EXISTS `product_param_mapping`;
-CREATE TABLE `product_param_mapping` (
+DROP TABLE IF EXISTS `product_params`;
+CREATE TABLE `product_params` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` varchar(20) NOT NULL DEFAULT '' COMMENT '商品ID',
+  `param_key` varchar(50) NOT NULL DEFAULT 'default' COMMENT '属性key',
+  `param_name` varchar(50) NOT NULL DEFAULT 'default' COMMENT '属性名称',
+  `param_value` varchar(100) NOT NULL DEFAULT 'default' COMMENT '属性',
+  `ctime` timestamp NOT NULL DEFAULT '1970-01-02 00:00:00' COMMENT '创建时间',
+  `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `is_delete` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT '是否删除',
+  PRIMARY KEY (`id`),
+  KEY `product_id` (`product_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='商品规格和商品的关系表';
+
+-- ----------------------------
+-- Table structure for product_param_content
+-- ----------------------------
+DROP TABLE IF EXISTS `product_param_content`;
+CREATE TABLE `product_param_content` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_id` varchar(20) NOT NULL DEFAULT '' COMMENT '商品ID',
   `param_data` text COMMENT '参数数据，格式为json格式',

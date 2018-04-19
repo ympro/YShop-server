@@ -1,7 +1,7 @@
 package com.yshop.service.content.dao;
 
-import com.yshop.service.product.dao.model.Content;
-import com.yshop.service.product.dao.model.ContentExample;
+import com.yshop.service.content.dao.model.Content;
+import com.yshop.service.content.dao.model.ContentExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
